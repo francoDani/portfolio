@@ -10,9 +10,10 @@ const Menu = () => {
 
     return (
         <div>
-            <button className="mainBtn" onClick={showSideBar}><FontAwesomeIcon icon={faBars} /> </button>
-            <div className={sidebar ? 'navContainer show' : 'navContainer'} onClick={showSideBar}>
-                <button className="mainBtn" ><FontAwesomeIcon icon={faTimes} /> </button>
+            <button className={!sidebar ? 'mainBtn' : 'hiddenBtn'} onClick={showSideBar}><FontAwesomeIcon icon={faBars} /> </button>
+            <button className={sidebar ? 'mainBtn' : 'hiddenBtn'} ><FontAwesomeIcon icon={faTimes} onClick={showSideBar}/> </button>
+            <div className={sidebar ? 'navContainer show' : 'navContainer hidden'} onClick={showSideBar}>
+                
                 <ul>
                     {SidebarData.map((item, index) => {
                         return (
