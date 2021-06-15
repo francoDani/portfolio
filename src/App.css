@@ -16,19 +16,15 @@
   margin: 0;
   padding: 0;  
 }
-/*
-body
-{
-  overflow: hidden;
-}
 
 .landingContainer
 {
-  width: 100%;
+  width: 100% !important;
   min-height: 100vh;
   background: var(--background-color);  
   position: absolute;
 }
+/*
 .navContainer.show
 {
   width: 100%;
@@ -288,7 +284,7 @@ body
   position: absolute;  
   display: flex;
   transform: translate(0, 50px);  
-  transition: .3s;
+  transition: .3s;  
 }
 
 .presentation h1
