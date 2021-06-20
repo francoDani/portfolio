@@ -1,0 +1,199 @@
+
+.dark
+{
+  position: absolute;
+  top: 50%;
+  margin-left: 100px;
+  border-radius: 15px;
+  background-color: var(--span-color);
+  padding: 10px;
+}
+
+.secUp
+{
+    margin-top: 0px;
+    position: relative;
+    background: #f0f8ff;
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;    
+    transition: .5s;
+    position: absolute;
+    top: 50%;
+    margin-left: 100px;
+    border: solid 2px var(--white);
+    background-color: white;
+}
+
+.loader
+{    
+    display: flex;
+    flex-direction: row;
+}
+
+.loader div
+{
+    position: relative;
+    width: 20px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 40px;
+    overflow: hidden;
+    border: 2px solid #edf1f4;
+    background: var(--white);
+    box-shadow: 7px 7px 10px rgba(0,0,0,0.1),
+                -7px -7px 10px #fff,
+                inset -5px -5px 5px rgba(255,255,255,0.5),
+                inset 5px 5px 5px rgba(0,0,0,0.05);
+    transition: 2s;
+}
+
+.loader div::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    border-radius: 40px;
+    box-shadow: 7px 7px 10px rgba(0,0,0,0.1),
+                -7px -7px 10px rgb(240, 236, 236),
+                inset -5px -5px 5px rgba(255,255,255,0.5),
+                inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+.dark .loader div::before
+{
+    box-shadow: 8px 8px 10px rgba(0,0,0,0.1),
+    -8px -8px 10px rgb(46, 33, 33),
+    inset -5px -5px 5px rgba(5, 5, 5, 0.5),
+    inset 5px 5px 5px rgba(0,0,0,0.05);
+}
+.dark .loader div
+{
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05,#06111a));
+    box-shadow: 8px 8px 10px rgba(0,0,0,0.1),
+                -8px -8px 10px rgb(0, 0, 0),
+                inset -5px -5px 5px rgba(0, 0, 0, 0.5),
+                inset 5px 5px 5px rgba(0,0,0,0.05);
+    border: 2px solid #292727;
+}
+
+.loader div::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.2),
+                0 410px 0 400px #21f379;
+    animation: animate 4s ease-in-out infinite;
+    transform: translateY(160px);        
+}
+
+.loader div:nth-child(1):after
+{    
+    animation-delay: calc(-1s * 0);
+}
+.loader div:nth-child(2):after
+{    
+    animation-delay: calc(-1s * 1);
+}.loader div:nth-child(3):after
+{    
+    animation-delay: calc(-1s * 2);
+}.loader div:nth-child(4):after
+{    
+    animation-delay: calc(-1s * 3);
+}
+
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(80px);
+        filter: hue-rotate(180deg);
+    }
+    50%
+    {
+        transform: translateY(0px);
+    }
+    100%
+    {
+        transform: translateY(80px);
+        filter: hue-rotate(0deg);
+    }
+}
+
+#toggleUp
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e9f5ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: anima 2.5s infinite;
+}
+
+@keyframes anima
+{
+    0%
+    {        
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50%
+    {
+        filter: hue-rotate(180deg);
+        transform: rotate(180deg);
+    }
+    100%
+    {        
+        filter: hue-rotate(360deg);
+        transform: rotate(0deg);
+    }
+}
+
+#toggleUp
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e9f5ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;    
+}
+
+section.dark #toggleUp
+{
+    background: #404852;
+}
+#toggleUp::before
+{
+    content: '\f186';
+    font-family: fontAwesome;
+    color: #2fa1ff;
+}
+
+section.dark #toggleUp::before
+{
+    content: '\f185';
+}

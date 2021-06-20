@@ -16,14 +16,14 @@ const SidebarData = [
         cName: "about"
     },
     {
-        tittle: "Proyects",
-        path: '/',
+        tittle: "Projects",
+        path: '/projects',
         icon: <FontAwesomeIcon icon = {faPuzzlePiece} />,
-        cName: "proyects"
+        cName: "projects"
     },
     {
         tittle: "Contact Me",
-        path: '/',
+        path: '/contact',
         icon: <FontAwesomeIcon icon = {faEnvelope} />,
         cName: "contact"
     }

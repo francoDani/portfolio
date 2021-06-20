@@ -1,4 +1,5 @@
 import './App.css';
+import './Animation.css'
 import Main from './views/main'
 
 function App() {

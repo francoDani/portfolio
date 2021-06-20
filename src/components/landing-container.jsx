@@ -1,21 +1,35 @@
 import Menu from './menu';
 import Presentation from './presentation';
-import Mark from './mark';
+import AboutMe from './aboutMe'
+
 import Colors from './colors';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 const landingContainer = () => {
     const change = () => {
 
     }
     return (
-        <div className="section">
-            <div className="landingContainer">
-                <Mark />
+        <Router >
+                <div className="landing-container">
                 <Menu />
-                <Presentation />                
-            </div>
-            <Colors />
-        </div>
+
+                    <Switch > 
+                        <Route path="/about">
+                            <AboutMe />
+                        </Route>
+                        <Route path="/" >
+                            <Presentation />
+                        </Route>
+                    </Switch>                    
+                </div>
+            </Router>
+
     )
 }
 
