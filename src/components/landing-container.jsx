@@ -8,7 +8,8 @@ import {
     Switch,
     Route,
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
+import Projects from './projects';
 
 const landingContainer = () => {
     const change = () => {
@@ -16,19 +17,23 @@ const landingContainer = () => {
     }
     return (
         <Router >
-                <div className="landing-container">
+            <div className="landing-container">
                 <Menu />
 
-                    <Switch > 
-                        <Route path="/about">
-                            <AboutMe />
-                        </Route>
-                        <Route path="/" >
-                            <Presentation />
-                        </Route>
-                    </Switch>                    
-                </div>
-            </Router>
+                <Switch >
+                    <Route path="/projects" >
+                        <Projects />
+                    </Route>
+                    <Route path="/about">
+                        <AboutMe />
+                    </Route>
+                    <Route path="/" >
+                        <Presentation />
+                    </Route>
+
+                </Switch>
+            </div>
+        </Router>
 
     )
 }
