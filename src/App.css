@@ -2,7 +2,7 @@
   --background-color: #010001;
   --white: #D9DCD6;
   --span-color: #119DA4;
-  --detail-color: #98b70d;
+  --detail-color: #ff00c8;
   --animation-var: 1;
   --font: 'Orbitron', sans-serif;
   --secondaryFont: 'Ubuntu Mono', monospace;
@@ -162,32 +162,32 @@ body{
   transition: .5s;
 }
 
-.landing-container__about-container
+.landing-container__about-container, .landing-container__project-container
 {    
   background: var(--background-color);
   margin-top: 2em;
-  padding: 2em;
+  padding: 1em;
 }
-.landing-container__about-container h1
+.landing-container__about-container, .landing-container__project-container h1
 {
   color: var(--white);
   font-size: 2.5em;
   letter-spacing: 2px;
 }
-.landing-container__about-container h1 #span1
+.landing-container__about-container, .landing-container__project-container h1 #span1
 {
   font-family: var(--font);
 }
-.landing-container__about-container h1 #span2
+.landing-container__about-container, .landing-container__project-container h1 #span2
 {
   color: var(--span-color);
   font-family: var(--font);
 }
-.landing-container__about-container h2
+.landing-container__about-container, .landing-container__project-container h2
 {
   color: #555;
 }
-.landing-container__about-container p
+.landing-container__about-container, .landing-container__project-container p
 {
   color: var(--white);
   font-size: 1.1em;
@@ -197,17 +197,18 @@ body{
   margin-bottom: 1em;
 }
 
-.landing-container__about-container a
+.landing-container__about-container, .landing-container__project-container a
 {  
   text-decoration: none;
   color: var(--detail-color);
   font-weight: bold;
   border: solid 2px var(--span-color);
-  padding: 10px;
+  padding: 5px;
   border-radius: 25px;  
-  transition: .5s;  
+  transition: .5s;
+  font-size: 0.8em;
 }
-.landing-container__about-container a:hover
+.landing-container__about-container, .landing-container__project-container a:hover
 {
   color: var(--span-color);
   border-color: var(--detail-color);
@@ -241,6 +242,84 @@ body{
   text-align: center;
   
 }
+.contact-container
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.contact-card
+  {
+    position: absolute;    
+    top: 4em;
+    height: fit-content;
+    width: 90vmin;
+    border: solid 1px grey;
+    border-radius: 3%;
+    padding: 1em;  
+    padding-bottom: 1.5em;
+    background: rgb(19, 18, 18);
+  }
+  .contact-card h1
+  {
+    color: var(--white);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: .5em;
+
+  }
+  
+
+  .contact-card ul
+  {
+    display: inline;
+    color: var(--white);
+    font-size: 1em;
+    list-style: none;
+  }
+  .contact-card ul li span
+  {
+    display: block;
+    font-weight: 700;
+    color: var(--detail-color);
+    font-size: 1.4em;    
+    animation: go 2s;   
+    animation-direction: normal; 
+    margin-bottom: .3em;
+    margin-top: 1em;
+  }
+  @keyframes go {
+    0%{
+    transform: translate(130%);
+      
+    }
+    50%{
+
+    }
+    100%{
+      transform: translate(0%);
+    }    
+  }
+  #span1
+  {
+    animation-delay: .3s;    
+  }
+  #span2
+  {
+    animation-delay: .6s;    
+  }
+  #span3
+  {
+    animation-delay: 1.2s;    
+  }
+  .contact-card ul li
+  {
+    font-weight: 500;
+    margin-left: 2em;
+  }
+
+
+
 
 
 
@@ -266,15 +345,17 @@ body{
   }
   .landing-container__menu .navContainer.show
 {
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(6px);
   width: 100%;
   position: absolute;
-  transition: 1s;
-  z-index: 40;    
+  transition: .5s;
+  z-index: 40;
+  overflow-y: hidden;
 }
 
 .landing-container__menu .navContainer{
@@ -291,7 +372,7 @@ body{
   width: 100vw;
   position: relative;
   top: 0;
-  transition: 1s;
+  transition: .5s;
   transform: translate(100%);
   z-index: 40;
   
@@ -327,11 +408,16 @@ body{
     font-size: 2.5em;    
     margin-right: 0;
   }
-  .landing-container__about-container
+  .landing-container__about-container, .landing-container__project-container
   {
     position: absolute;
     top: 0;
   } 
+  .landing-container__project-container h1
+  {
+    width: 100%;
+    text-align: center;
+  }
   .landing-container__about-container__work
   {
     width: 80vw;
@@ -347,5 +433,26 @@ body{
     border-bottom: solid 2px var(--span-color);
     width: 80vw;    
     margin-top: 3em;
+    padding-left: 1em;
+    padding-right: 0;
+  }
+  .landing-container__about-container__work h1
+  {
+    text-align: center;
+  }
+
+  .contact-card
+  {
+    padding: 0;
+  }
+
+  .contact-card ul li
+  {
+    margin-left: 0;
+  }
+  .contact-container
+  {
+    border-radius: 0 0 25px 25px;
+    width: 100%;
   }
 }

@@ -1,6 +1,7 @@
 import Menu from './menu';
 import Presentation from './presentation';
 import AboutMe from './aboutMe'
+import Contact from '../views/contact'
 
 import Colors from './colors';
 import {
@@ -21,6 +22,9 @@ const landingContainer = () => {
                 <Menu />
 
                 <Switch >
+                    <Route path="/contact">
+                        <Contact />
+                    </Route>
                     <Route path="/projects" >
                         <Projects />
                     </Route>
