@@ -1,7 +1,9 @@
 :root{
-  --background-color: #010001;
-  --white: #D9DCD6;
+  --background-color: #101020;
+  --darkerBg: #151525;
+  --white: #c3c5c2;
   --span-color: #119DA4;
+  --span-off: #055b5f;
   --detail-color: #ff00c8;
   --animation-var: 1;
   --font: 'Orbitron', sans-serif;
@@ -49,7 +51,9 @@ body{
   .landing-container__sign-container h1
   {
     width: fit-content;
-    width: 100%;
+    -webkit-box-reflect: below -30px linear-gradient(transparent, #0003);
+    line-height: 0,7em;
+    width: 100%;    
     text-align: center;
     font-size: 4em;
     letter-spacing: 1px;    
@@ -57,7 +61,30 @@ body{
   
   .landing-container__sign-container h1 span
   {
-    color: var(--span-color);
+    color: var(--white);    
+    text-shadow: 0 0 10px var(--span-color),
+    0 0 20px var(--span-color),
+    0 0 30px var(--span-color),
+    0 0 40px var(--span-color),
+    0 0 50px var(--span-color);
+    animation: glow 5s linear;
+    animation-timing-function: steps(5, end);
+      
+  }
+  @keyframes glow {
+    0.1%, 20.1%, 40.1%, 50.1%, 65.1%, 80.1%, 80%
+    {
+      color: var(--white);
+      text-shadow: 0 0 10px var(--span-color),
+      0 0 20px var(--span-color),
+      0 0 30px var(--span-color),
+      0 0 40px var(--span-color),
+      0 0 50px var(--span-color);
+    }
+    0%, 20%, 21%, 40%, 41.4%, 50%, 65%,100%{     
+      color: var(--span-off);
+      text-shadow: none;
+    }
   }
   .landing-container__sign-container h2
   {
@@ -74,14 +101,14 @@ body{
     margin: 1em;
   }
   
-  .landing-container__sign-container ul li a
+  .landing-container__sign-container ul li a 
   {
     text-decoration: none;
     color: var(--white);
-    font-size: 2.5em;
-    transition: .2s;
-    
-  }
+    font-size: 2.5em;    
+    transition: .2s;    
+  }  
+  
   .landing-container__sign-container ul li #a1{
     animation: colors 2s infinite;
     animation-delay: 1s;
@@ -107,7 +134,6 @@ body{
       color: white;
     }
   }
-
   .landing-container__sign-container ul li #a1:hover
   {
     transform: scale(1.1);
@@ -130,7 +156,9 @@ body{
 .landing-container__menu .navContainer ul
 {
   list-style: none;
-  margin-left: 35px;
+  background: var(--darkerBg);
+  box-shadow: 0px 2px 30px #111;
+  padding-left: 35px;
 }
 .landing-container__menu .navContainer ul li
 {
@@ -141,12 +169,13 @@ body{
   cursor: pointer;
   font-family: var(--secondaryFont);
   font-weight: 400;
-  font-size: 1.4em;
+  font-size: 1.2em;
   
 }
 .landing-container__menu .navContainer ul li a:hover
 {
   color: var(--span-color);
+  background: rgba(26, 26, 26, 0.76);
 }
 .landing-container__menu .navContainer ul li i
 {
@@ -161,33 +190,48 @@ body{
   color: var(--white);
   transition: .5s;
 }
-
-.landing-container__about-container, .landing-container__project-container
+.landing-container__about-container
+{
+  background: var(--background-color);
+  margin-top: 2em;
+  padding: 4em;
+}
+.landing-container__project-container
 {    
   background: var(--background-color);
   margin-top: 2em;
   padding: 1em;
 }
-.landing-container__about-container, .landing-container__project-container h1
+.landing-container__about-container h1, .landing-container__project-container h1
 {
   color: var(--white);
   font-size: 2.5em;
-  letter-spacing: 2px;
+  letter-spacing: 2px;  
 }
-.landing-container__about-container, .landing-container__project-container h1 #span1
-{
+.landing-container__about-container span
+{  
   font-family: var(--font);
 }
-.landing-container__about-container, .landing-container__project-container h1 #span2
+.landing-container__about-container h1 #span2
+{ 
+  animation: glow 3s linear;
+  animation-timing-function: steps(3, end);
+}
+
+.landing-container__project-container h1 #span1
+{  
+  font-family: var(--font);
+}
+.landing-container__about-container h1 #span2, .landing-container__project-container h1 #span2
 {
   color: var(--span-color);
   font-family: var(--font);
 }
-.landing-container__about-container, .landing-container__project-container h2
+.landing-container__about-container h2, .landing-container__project-container h2
 {
   color: #555;
 }
-.landing-container__about-container, .landing-container__project-container p
+.landing-container__about-container p, .landing-container__project-container p
 {
   color: var(--white);
   font-size: 1.1em;
@@ -197,7 +241,7 @@ body{
   margin-bottom: 1em;
 }
 
-.landing-container__about-container, .landing-container__project-container a
+.landing-container__about-container a, .landing-container__project-container a
 {  
   text-decoration: none;
   color: var(--detail-color);
@@ -208,7 +252,7 @@ body{
   transition: .5s;
   font-size: 0.8em;
 }
-.landing-container__about-container, .landing-container__project-container a:hover
+.landing-container__about-container a:hover, .landing-container__project-container a:hover
 {
   color: var(--span-color);
   border-color: var(--detail-color);
@@ -240,29 +284,29 @@ body{
   bottom: 5px;
   width: 100%;
   text-align: center;
-  
+  background: #101020;
 }
 .contact-container
 {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center;  
 }
 .contact-card
   {
     position: absolute;    
     top: 4em;
     height: fit-content;
-    width: 90vmin;
-    border: solid 1px grey;
+    width: 90vmin;    
     border-radius: 3%;
     padding: 1em;  
     padding-bottom: 1.5em;
-    background: rgb(19, 18, 18);
+    background: var(--white);
+    box-shadow: 0 0 15px black;
   }
   .contact-card h1
   {
-    color: var(--white);
+    color: var(--darkerBg);
     font-size: 2.5em;
     text-align: center;
     margin-bottom: .5em;
@@ -273,15 +317,16 @@ body{
   .contact-card ul
   {
     display: inline;
-    color: var(--white);
+    color: var(--darkerBg);
     font-size: 1em;
+    font-weight: bold;
     list-style: none;
   }
   .contact-card ul li span
   {
     display: block;
-    font-weight: 700;
-    color: var(--detail-color);
+    font-weight: 900;
+    color: var(--darkerBg);
     font-size: 1.4em;    
     animation: go 2s;   
     animation-direction: normal; 
@@ -300,25 +345,56 @@ body{
       transform: translate(0%);
     }    
   }
-  #span1
-  {
-    animation-delay: .3s;    
-  }
-  #span2
-  {
-    animation-delay: .6s;    
-  }
-  #span3
-  {
-    animation-delay: 1.2s;    
-  }
-  .contact-card ul li
-  {
-    font-weight: 500;
-    margin-left: 2em;
-  }
+#span1
+{
+  animation-delay: .3s;    
+}
+#span2
+{
+  animation-delay: .6s;    
+}
+#span3
+{
+  animation-delay: 1.2s;    
+}
+.contact-card ul li
+{
+  font-weight: 500;
+  margin-left: 2em;
+}
+.contact-card__img
+{
+  width: 30vmin;
+  height: 30vmin;
+  border: solid 2px black;
+  border-radius: 5%;
+  background: var(--background-color);
+  background-image: url(./assets/dibujo.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  right: 1em;
+}
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #101020;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #222;  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #050510;
+}
 
 
 
@@ -329,7 +405,7 @@ body{
   .landing-container__menu{
     overflow-x: hidden;
     width: 100vw;
-    margin: 0;     
+    margin: 0;    
   }
   .landing-container__menu .mainBtn
   {
@@ -339,7 +415,7 @@ body{
     font-size: 3em;
     right: 5px;
     background: none;    
-    color: #119DA4;    
+    color: var(--span-color);    
     padding: 5px;
     border: none;    
   }
@@ -355,7 +431,7 @@ body{
   position: absolute;
   transition: .5s;
   z-index: 40;
-  overflow-y: hidden;
+  overflow-y: hidden;  
 }
 
 .landing-container__menu .navContainer{
@@ -393,6 +469,11 @@ body{
   display: none;
   
 }
+.landing-container__menu .navContainer ul
+{
+  background: none;
+  box-shadow: unset;
+}
   .landing-container__menu .navContainer ul i
 {
   margin: 4px;  
@@ -408,10 +489,15 @@ body{
     font-size: 2.5em;    
     margin-right: 0;
   }
+  .landing-container__about-container
+  {
+    padding: 1.5em;
+  }
   .landing-container__about-container, .landing-container__project-container
   {
     position: absolute;
     top: 0;
+    width: 100%;
   } 
   .landing-container__project-container h1
   {
@@ -443,16 +529,29 @@ body{
 
   .contact-card
   {
-    padding: 0;
+    padding: 1em;
   }
 
   .contact-card ul li
   {
-    margin-left: 0;
+    margin-left: 0;    
   }
   .contact-container
   {
     border-radius: 0 0 25px 25px;
     width: 100%;
+    
+  }
+}
+@media (max-width: 500px){
+  .contact-card{
+    width: 75vh;
+    height: 90vw;
+    transform: rotate(90deg);
+    margin-top: 20vh;
+  }
+  .contact-card span
+  {
+    font-size: 0.5em;
   }
 }

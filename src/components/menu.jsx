@@ -12,8 +12,26 @@ import SidebarData from './sideData'
 
 
 const Menu = () => {
+
+    const [overflow, setOverflow] = useState(false);
+    const blockOverflow = () => {
+        
+        if (overflow){
+            document.body.style.overflowY = "auto"            
+            setOverflow(!overflow);
+        }else{
+            document.body.style.overflowY = "hidden";
+            setOverflow(true);            
+        }
+    }
+
     const [sidebar, setSidebar] = useState(false);
-    const showSideBar = () => setSidebar(!sidebar);
+    const showSideBar = () =>{
+             setSidebar(!sidebar)
+            blockOverflow();
+        }
+
+    
 
     return (
         <div className="landing-container__menu">
