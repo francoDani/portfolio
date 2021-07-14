@@ -7,6 +7,7 @@ const contactCard = () =>{
         <div className="contact-card">            
             <h1>Contact Me</h1>
             <div className="contact-card__img"></div>
+            <div className="contact-card__name-container"><h3>Danielsen Franco Ivan</h3></div>
             <ul>
                 <li><span><i><FontAwesomeIcon icon={faLocationArrow}/> </i>Address:</span> Juan José paso 750</li>
                 <li><span id="span1"><i><FontAwesomeIcon icon={faPhone}/> </i>Cellphone:</span> +54 9 381-6534-171</li>

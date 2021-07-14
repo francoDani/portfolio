@@ -28,7 +28,10 @@ const Menu = () => {
     const [sidebar, setSidebar] = useState(false);
     const showSideBar = () =>{
              setSidebar(!sidebar)
-            blockOverflow();
+             if(window.screen.width < 900){
+                blockOverflow();     
+             };
+            
         }
 
     
@@ -37,11 +40,11 @@ const Menu = () => {
         <div className="landing-container__menu">
             <button className={!sidebar ? 'mainBtn' : 'hiddenBtn'} onClick={showSideBar}><FontAwesomeIcon icon={faBars} /> </button>
             <div className={sidebar ? 'navContainer show' : 'navContainer hidden'} onClick={showSideBar}>
-            <button className={sidebar ? 'mainBtn' : 'hiddenBtn'} ><FontAwesomeIcon icon={faTimes} onClick={showSideBar}/> </button>    
+            <button className={sidebar ? 'mainBtn' : 'hiddenBtn'} ><FontAwesomeIcon icon={faTimes} /> </button>    
                 <ul>
                     {SidebarData.map((item, index) => {
                         return (
-                            <li key={index} className={item.cName}>
+                            <li key={index} className={item.cName} onClick={showSideBar}>
                                <Link to={item.path}><i>{item.icon}</i>  {item.tittle}</Link>
                             </li>
                         )

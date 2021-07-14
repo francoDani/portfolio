@@ -165,7 +165,6 @@ body{
   display: inline-block;
   margin: 5px;
   padding: 5px;
-  color: var(--white);
   cursor: pointer;
   font-family: var(--secondaryFont);
   font-weight: 400;
@@ -187,7 +186,7 @@ body{
 .landing-container__menu .navContainer ul li a
 {
   text-decoration: none;
-  color: var(--white);
+  color: white;
   transition: .5s;
 }
 .landing-container__about-container
@@ -281,10 +280,11 @@ body{
   font-size: .8em;
   font-family: 'Times New Roman', Times, serif;
   position: fixed;
-  bottom: 5px;
+  bottom: 0;
   width: 100%;
   text-align: center;
   background: #101020;
+  padding-bottom: .5em;
 }
 .contact-container
 {
@@ -303,6 +303,18 @@ body{
     padding-bottom: 1.5em;
     background: var(--white);
     box-shadow: 0 0 15px black;
+    border: solid rgb(219, 216, 216) 2px;
+  }
+  .contact-card__name-container
+  {
+    position: absolute;
+    font-family: var(--font);    
+    padding: 0;
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 1px;
+    bottom: 20%;    
+    right: 0;
   }
   .contact-card h1
   {
@@ -543,15 +555,39 @@ body{
     
   }
 }
-@media (max-width: 500px){
+@media (max-width: 500px){  
+  .contact-card__name-container
+  {
+    font-size: .7em;
+
+  }
   .contact-card{
-    width: 75vh;
+    position: absolute;
+    top: 1em;    
+    min-height: 300px;
+    min-width: 450px;
+    width: 85vh;
     height: 90vw;
-    transform: rotate(90deg);
-    margin-top: 20vh;
+    max-width: 600px;
+    transform: rotate(90deg) translate(30%);        
+  }
+  .contact-card h1
+  {
+    margin-bottom: .2em;
   }
   .contact-card span
   {
     font-size: 0.5em;
+  }
+  
+  .contact-card ul li span
+  {
+    font-size: 1.2em;    
+    margin-top: 4px;
+    margin-bottom: 3px;
+  }
+  .contact-card__img
+  {
+    top: 30%;
   }
 }
