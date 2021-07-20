@@ -8,27 +8,25 @@ import {
   } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCoffee, faTimes } from '@fortawesome/free-solid-svg-icons'
-import SidebarData from './sideData'
+import SidebarData from './Data/sideData'
 
 
 const Menu = () => {
 
-    const [overflow, setOverflow] = useState(false);
-    const blockOverflow = () => {
-        
-        if (overflow){
-            document.body.style.overflowY = "auto"            
-            setOverflow(!overflow);
-        }else{
-            document.body.style.overflowY = "hidden";
-            setOverflow(true);            
-        }
-    }
-
     const [sidebar, setSidebar] = useState(false);
-    const showSideBar = () =>{
-             setSidebar(!sidebar)
+
+    const blockOverflow = () => {        
+        if (sidebar){
+            document.body.style.overflowY = "auto";                    
+        }else{
+            document.body.style.overflowY = "hidden";               
+        }
+    }    
+    const showSideBar = () =>{      
+            setSidebar(!sidebar)
+            if (window.screen.width < 900){
             blockOverflow();
+            }else{document.body.style.overflowY = "auto"};
         }
 
     

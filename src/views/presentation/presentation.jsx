@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { } from '@fortawesome/free-solid-svg-icons'
 import { faGit, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import Animation from './animation'
 
 const presentation = () => {
     return (
