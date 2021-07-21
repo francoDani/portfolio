@@ -9,6 +9,7 @@ import {
     Link
 } from "react-router-dom";
 import Projects from './projects';
+import ToggleTheme from './toggleTheme';
 
 const landingContainer = () => {
     const change = () => {
@@ -18,6 +19,7 @@ const landingContainer = () => {
         <Router >
             <div className="landing-container">
                 <Menu />
+                <ToggleTheme/>
 
                 <Switch >
                     <Route path="/contact">

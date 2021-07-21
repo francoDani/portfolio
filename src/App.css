@@ -20,6 +20,17 @@
   padding: 0;  
   box-sizing: border-box;  
 }
+.toggle-btn
+{
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: var(--white);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 50;
+}
 body{
   overflow-x: hidden;
 }
@@ -61,7 +72,7 @@ body{
   
   .landing-container__sign-container h1 span
   {
-    color: var(--white);    
+    color: var(--span-off);    
     text-shadow: 0 0 10px var(--span-color),
     0 0 20px var(--span-color),
     0 0 30px var(--span-color),
@@ -128,7 +139,7 @@ body{
   }
   @keyframes colors {
     0%{
-      color: white;
+      color: var(--white);
       
     }
     50%{
@@ -136,7 +147,7 @@ body{
       transform: scale(1.05);
     }
     100%{
-      color: white;
+      color: var(--white);
     }
   }
   .landing-container__sign-container ul li #a1:hover
@@ -178,8 +189,7 @@ body{
 }
 .landing-container__menu .navContainer ul li a:hover
 {
-  color: var(--span-color);
-  background: rgba(26, 26, 26, 0.76);
+  color: var(--span-off);  
 }
 .landing-container__menu .navContainer ul li i
 {
@@ -196,7 +206,8 @@ body{
 }
 .landing-container__about-container
 {
-  background: var(--background-color);
+  background: transparent;
+  margin: 4em;
   margin-top: 2em;
   padding: 4em;
 }
@@ -226,6 +237,33 @@ body{
 {  
   font-family: var(--font);
 }
+.project__card-container
+{
+  width: 100%;
+  display: flex;
+  flex-direction: row;  
+  flex: 1 1 auto;
+  border-top: solid 2px var(--span-color);
+}
+.projects__img
+{
+  right: 2em;
+  height: 12em;
+  width: 30%;
+  overflow: hidden;
+  margin-top: 2em;
+}
+.projects__img img
+{
+  transition: 8s;
+  width: 25em;  
+  margin: 0;
+}
+.projects__img:hover img
+{
+  transform: translate(0, -70%);
+}
+
 .landing-container__about-container h1 #span2, .landing-container__project-container h1 #span2
 {
   color: var(--span-color);
@@ -251,7 +289,7 @@ body{
   color: var(--detail-color);
   font-weight: bold;
   border: solid 2px var(--span-color);
-  padding: 5px;
+  padding: 10px;
   border-radius: 25px;  
   transition: .5s;
   font-size: 0.8em;
@@ -260,15 +298,23 @@ body{
 {
   color: var(--span-color);
   border-color: var(--detail-color);
+  box-shadow: 0 0 5px var(--detail-color),
+  0 0 7px var(--detail-color),
+  0 0 9px var(--detail-color),
+  0 0 11px var(--detail-color),
+  0 0 13px var(--detail-color),
+  0 0 15px var(--detail-color),
+  0 0 17px var(--detail-color);
+  text-shadow: 0 0 5px var(--span-color),
+  0 0 7px var(--span-color);
 }
 
-.landing-container__about-container__work div
+.landing-container__about-container__work .card
 {
-  width: 80vw;
+  width: 60%;
   min-height: auto;
   margin: 2em;
-  padding: 2em;
-  border-bottom: solid 3px var(--span-color);
+  padding: 0em 2em 2em 2em;  
   transition: .5s;
 }
 .landing-container__about-container__work p
@@ -482,14 +528,24 @@ body{
   }
   .landing-container__about-container
   {
+    margin: 0;
+    margin-top: 2em;
     padding: 1.5em;
   }
   .landing-container__about-container, .landing-container__project-container
   {
+    padding: 2em 0 0 0;
     position: absolute;
     top: 0;
     width: 100%;
   } 
+  .project__card-container
+  {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    width: 100vw;
+  }  
   .landing-container__project-container h1
   {
     width: 100%;
@@ -497,22 +553,41 @@ body{
   }
   .landing-container__about-container__work
   {
+    padding: 0;
+    margin-left: 0;
     width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  .landing-container__about-container__work div
+  .landing-container__about-container__work .card
   {
     padding-bottom: 2em;
     border-top: solid 2px var(--span-color);
-    border-bottom: solid 2px var(--span-color);
-    width: 80vw;    
+    border-bottom: none;
+    width: 90vw;    
     margin-top: 3em;
+    margin-left: 3em;
+    padding-left: 1em;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+  .projects__img
+  {
+    padding-bottom: 2em;    
+    width: 90vw;    
+    height: 10em;
+    margin-top: 1em;
+    margin-left: 3em;
     padding-left: 1em;
     padding-right: 0;
   }
+  .projects__img img
+  {
+    width: 100%;
+  }
+
   .landing-container__about-container__work h1
   {
     text-align: center;
