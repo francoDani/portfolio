@@ -1,9 +1,7 @@
 import Menu from './menu';
-import Presentation from './presentation';
+import Presentation from '../views/presentation/presentation';
 import AboutMe from './aboutMe'
 import Contact from '../views/contact'
-
-import Colors from './colors';
 import {
     BrowserRouter as Router,
     Switch,

@@ -1,9 +1,26 @@
+import projectsData from './Data/projectsData';
+
 
 const projects = () =>{
     return  <div className="landing-container__project-container">
         <h1>My firts projects</h1>
        <secction  className="landing-container__about-container__work">
-                <div className="card 1">
+                {projectsData.map((item,index) => {
+                    return(
+                        <div className={"card " + index} key={index}>
+                            <h1>{item.tittle}</h1>
+                            <p>{item.contain}</p>
+                            <a href={item.path} target="_blank" rel="noreferrer">{item.button}</a>
+                        </div>
+                    )
+                })}
+            </secction>
+    </div>
+}
+
+export default projects;
+
+/*<div className="card 1">
                     <h1>Calculadora de costos</h1>
                     <p>This project was my first solution for a real need, i had to develop a simple tool for a drugstore, they needed to 
                         simplify the way to calculate the correct price for his products, considering the tasks and percentage to be earned.
@@ -24,9 +41,4 @@ const projects = () =>{
                         my css, js and API handle.
                     </p>
                     <a href="https://github.com/francoDani/weatherapp">Look how the weather will be</a>
-                </div>
-            </secction>
-    </div>
-}
-
-export default projects;
+                </div>*/

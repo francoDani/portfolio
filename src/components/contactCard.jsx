@@ -12,7 +12,7 @@ const contactCard = () =>{
                 <li><span><i><FontAwesomeIcon icon={faLocationArrow}/> </i>Address:</span> Juan José paso 750</li>
                 <li><span id="span1"><i><FontAwesomeIcon icon={faPhone}/> </i>Cellphone:</span> +54 9 381-6534-171</li>
                 <li><span id="span2"><i><FontAwesomeIcon icon={faMailBulk}/> </i>Email: </span> franco.danielsen@gmail.com</li>
-                <li><span id="span3"><i><FontAwesomeIcon icon={faLinkedin}/> </i>Linkedin: </span> tini.to/0P3</li>
+                <li><span id="span3"><i><FontAwesomeIcon icon={faLinkedin}/> </i>Linkedin: </span><a href="tini.to/0P3" target="_blank" rel="noreferrer">tini.to/0P3</a></li>
             </ul>            
         </div>
     )

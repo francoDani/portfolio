@@ -66,22 +66,27 @@ body{
     0 0 20px var(--span-color),
     0 0 30px var(--span-color),
     0 0 40px var(--span-color),
-    0 0 50px var(--span-color);
+    0 0 50px var(--span-color),
+    0 0 60px var(--span-color),
+    0 0 70px var(--span-color);
     animation: glow 5s linear;
     animation-timing-function: steps(5, end);
       
   }
   @keyframes glow {
-    0.1%, 20.1%, 40.1%, 50.1%, 65.1%, 80.1%, 80%
+    0.1%, 20.1%, 40.1%, 50.1%, 65.1%, 80.1%, 81%, 90.2%
     {
       color: var(--white);
       text-shadow: 0 0 10px var(--span-color),
       0 0 20px var(--span-color),
       0 0 30px var(--span-color),
       0 0 40px var(--span-color),
-      0 0 50px var(--span-color);
+      0 0 50px var(--span-color),
+      0 0 60px var(--span-color),
+      0 0 70px var(--span-color);
     }
-    0%, 20%, 21%, 40%, 41.4%, 50%, 65%,100%{     
+    0%, 20%, 21%, 40%, 41.4%, 50%, 65%, 80%, 90%,100%
+    {     
       color: var(--span-off);
       text-shadow: none;
     }
@@ -339,36 +344,10 @@ body{
     display: block;
     font-weight: 900;
     color: var(--darkerBg);
-    font-size: 1.4em;    
-    animation: go 2s;   
-    animation-direction: normal; 
+    font-size: 1.4em;
     margin-bottom: .3em;
     margin-top: 1em;
   }
-  @keyframes go {
-    0%{
-    transform: translate(130%);
-      
-    }
-    50%{
-
-    }
-    100%{
-      transform: translate(0%);
-    }    
-  }
-#span1
-{
-  animation-delay: .3s;    
-}
-#span2
-{
-  animation-delay: .6s;    
-}
-#span3
-{
-  animation-delay: 1.2s;    
-}
 .contact-card ul li
 {
   font-weight: 500;
