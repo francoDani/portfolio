@@ -39,7 +39,7 @@ const Menu = () => {
             <button className={!sidebar ? 'mainBtn' : 'hiddenBtn'} onClick={showSideBar}><FontAwesomeIcon icon={faBars} /> </button>
             <div className={sidebar ? 'navContainer show' : 'navContainer hidden'} onClick={showSideBar}>
             <button className={sidebar ? 'mainBtn' : 'hiddenBtn'} ><FontAwesomeIcon icon={faTimes} /> </button>                
-                <ul>
+                <ul id="navigation">
                     {SidebarData.map((item, index) => {
                         return (
                             <li key={index} className={item.cName} onClick={showSideBar}>

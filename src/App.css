@@ -2,8 +2,10 @@
   --background-color: #101020;
   --darkerBg: #151525;
   --white: #c3c5c2;
+  --allways-white: #c3c5c2;
   --span-color: #119DA4;
   --span-off: #055b5f;
+  --neon-color: #c3c5c2;
   --detail-color: #ff00c8;
   --animation-var: 1;
   --font: 'Orbitron', sans-serif;
@@ -25,11 +27,12 @@
   background: none;
   border: none;
   font-size: 1.5em;
-  color: var(--white);
+  color: var(--detail-color);
   position: absolute;
   top: 10px;
   right: 10px;
   z-index: 50;
+  cursor: pointer;
 }
 body{
   overflow-x: hidden;
@@ -39,6 +42,7 @@ body{
   background: var(--background-color);
   max-width: 100vw;
   min-height: 100vh;    
+  transition: 1.5s;
 }
 
 
@@ -57,22 +61,25 @@ body{
     align-items: center;    
     font-family: var(--font);
     top: 35%;    
+    padding-bottom: 0;
+    -webkit-box-reflect: below -20px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.3));
   }
 
   .landing-container__sign-container h1
   {
-    width: fit-content;
-    -webkit-box-reflect: below -30px linear-gradient(transparent, #0003);
+    width: fit-content;    
     line-height: 0,7em;
     width: 100%;    
     text-align: center;
     font-size: 4em;
-    letter-spacing: 1px;    
+    letter-spacing: 1px;
+    transition-delay: 1s;
+    transition: 1.5s;   
   }
   
   .landing-container__sign-container h1 span
   {
-    color: var(--span-off);    
+    color: var(--neon-color);    
     text-shadow: 0 0 10px var(--span-color),
     0 0 20px var(--span-color),
     0 0 30px var(--span-color),
@@ -82,12 +89,13 @@ body{
     0 0 70px var(--span-color);
     animation: glow 5s linear;
     animation-timing-function: steps(5, end);
-      
+    transition: 3s;
+    cursor: pointer;
   }
   @keyframes glow {
     0.1%, 20.1%, 40.1%, 50.1%, 65.1%, 80.1%, 81%, 90.2%
     {
-      color: var(--white);
+      color: var(--allways-white);
       text-shadow: 0 0 10px var(--span-color),
       0 0 20px var(--span-color),
       0 0 30px var(--span-color),
@@ -106,6 +114,7 @@ body{
   {
     margin-top: .5em;
     text-align: center;
+    transition: 2s;
   }
   .landing-container__sign-container ul
   {
@@ -173,8 +182,30 @@ body{
 {
   list-style: none;
   background: var(--darkerBg);
-  box-shadow: 0px 2px 30px #111;
   padding-left: 35px;
+  transition: 3s;
+  box-shadow: 0px 2px 40px #111;
+}
+.landing-container__menu .navContainer .on
+{
+  box-shadow: 0 0 20px var(--span-color),
+  0 0 40px var(--span-color),
+  0 0 60px var(--span-color);
+  animation: light 3s linear;
+}
+@keyframes light {
+  0.1%, 20.1%, 40.1%, 50.1%, 65.1%, 80.1%, 81%, 90.2%
+  {
+    color: var(--allways-white);
+    box-shadow: 0 0 20px var(--span-color),
+    0 0 40px var(--span-color),
+    0 0 60px var(--span-color);
+  }
+  0%, 20%, 21%, 40%, 41.4%, 50%, 65%, 80%, 90%,100%
+  {     
+    color: var(--span-off);
+    box-shadow: none;
+  }
 }
 .landing-container__menu .navContainer ul li
 {
@@ -216,6 +247,7 @@ body{
   background: var(--background-color);
   margin-top: 2em;
   padding: 1em;
+  transition: 1.5s;
 }
 .landing-container__about-container h1, .landing-container__project-container h1
 {
@@ -305,8 +337,7 @@ body{
   0 0 13px var(--detail-color),
   0 0 15px var(--detail-color),
   0 0 17px var(--detail-color);
-  text-shadow: 0 0 5px var(--span-color),
-  0 0 7px var(--span-color);
+  text-shadow: 0 0 7px var(--span-color);
 }
 
 .landing-container__about-container__work .card
@@ -334,8 +365,14 @@ body{
   bottom: 0;
   width: 100%;
   text-align: center;
-  background: #101020;
-  padding-bottom: .5em;
+  background: var(--darkerBg);
+  padding: .5em 0 .5em 0;
+  transition: 1.5s;
+  box-shadow: 0px 2px 40px #111
+}
+.laning-container__footer.on
+{
+  animation: light 3s linear;
 }
 .contact-container
 {
@@ -346,13 +383,13 @@ body{
 .contact-card
   {
     position: absolute;    
-    top: 4em;
+    top: 7em;
     height: fit-content;
     width: 90vmin;    
     border-radius: 3%;
     padding: 1em;  
     padding-bottom: 1.5em;
-    background: var(--white);
+    background: var(--allways-white);
     box-shadow: 0 0 15px black;
     border: solid rgb(219, 216, 216) 2px;
   }
@@ -399,10 +436,17 @@ body{
   font-weight: 500;
   margin-left: 2em;
 }
+.contact-card ul li a
+{
+  text-decoration: none;
+  color: var(--darkerBg);
+}
 .contact-card__img
 {
   width: 30vmin;
   height: 30vmin;
+  max-width: 300px;
+  max-height: 300px;
   border: solid 2px black;
   border-radius: 5%;
   background: var(--background-color);
@@ -411,6 +455,7 @@ body{
   background-position: center;
   position: absolute;
   right: 1em;
+  transition: 1.5s;
 }
 
 /* width */
@@ -529,16 +574,29 @@ body{
   .landing-container__about-container
   {
     margin: 0;
-    margin-top: 2em;
-    padding: 1.5em;
   }
-  .landing-container__about-container, .landing-container__project-container
+  .landing-container__about-container 
   {
-    padding: 2em 0 0 0;
+    padding: 2em 1em 1em 1em;
+    margin-top: 2em;
     position: absolute;
     top: 0;
     width: 100%;
   } 
+  .landing-container__project-container
+  {
+    top: 3em;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    width: 100vw;    
+    padding: 0;
+  }
+  .landing-container__project-container h1
+  {
+    width: 100%;
+    text-align: center;
+  }
   .project__card-container
   {
     margin: 0;
@@ -546,11 +604,7 @@ body{
     flex-direction: column;
     width: 100vw;
   }  
-  .landing-container__project-container h1
-  {
-    width: 100%;
-    text-align: center;
-  }
+  
   .landing-container__about-container__work
   {
     padding: 0;
@@ -579,6 +633,7 @@ body{
     width: 90vw;    
     height: 10em;
     margin-top: 1em;
+    margin-bottom: 1em;
     margin-left: 3em;
     padding-left: 1em;
     padding-right: 0;
@@ -607,6 +662,16 @@ body{
     border-radius: 0 0 25px 25px;
     width: 100%;
     
+  }
+  .laning-container__footer.on
+  {
+    box-shadow: none;
+    animation: none;
+  }
+  .landing-container__menu .navContainer .on
+  {
+    box-shadow: none;
+    animation: none;
   }
 }
 @media (max-width: 500px){  
@@ -643,5 +708,12 @@ body{
   .contact-card__img
   {
     top: 30%;
+  }
+  .toggle-btn
+  {
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    z-index: 0;
   }
 }

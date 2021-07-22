@@ -3,7 +3,7 @@ import projectsData from './Data/projectsData';
 
 const projects = () =>{
     return  <div className="landing-container__project-container">
-        <h1>My firts projects</h1>
+        <h1>My first projects</h1>
        <secction  className="landing-container__about-container__work">
                 {projectsData.map((item,index) => {
                     return(

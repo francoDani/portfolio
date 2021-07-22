@@ -14,10 +14,11 @@ const ToggleTheme = () =>{
             root.style.setProperty('--span-off', '#055b5f');
             root.style.setProperty('--detail-color', '#ff00c8');
         }else{
-            root.style.setProperty('--background-color', '#c3c5c2');
-            root.style.setProperty('--darkerBg', '#8d8d8c');
+            root.style.setProperty('--background-color', '#90BEDE');
             root.style.setProperty('--white', '#101020');
-            
+            root.style.setProperty('--span-color', '#ff00c8');
+            root.style.setProperty('--span-off', '#a30481');
+            root.style.setProperty('--detail-color', '#119DA4');
         }
         setTheme(!theme);
     }
