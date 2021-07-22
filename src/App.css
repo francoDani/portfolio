@@ -243,8 +243,7 @@ body{
   padding: 4em;
 }
 .landing-container__project-container
-{    
-  background: var(--background-color);
+{   
   margin-top: 2em;
   padding: 1em;
   transition: 1.5s;
@@ -443,8 +442,8 @@ body{
 }
 .contact-card__img
 {
-  width: 30vmin;
-  height: 30vmin;
+  width: 30%;
+  height: 50%;
   max-width: 300px;
   max-height: 300px;
   border: solid 2px black;
@@ -583,8 +582,10 @@ body{
     top: 0;
     width: 100%;
   } 
+  
   .landing-container__project-container
   {
+    background: var(--background-color);
     top: 3em;
     left: 0;
     margin: 0;
@@ -626,6 +627,13 @@ body{
     padding-left: 1em;
     padding-right: 0;
     margin-bottom: 0;
+  }
+  .landing-container__about-container
+  {
+    background: var(--background-color);
+    padding-top: 0;
+    margin-top: 3em;
+    transition: 1.5s;
   }
   .projects__img
   {
@@ -692,7 +700,7 @@ body{
   }
   .contact-card h1
   {
-    margin-bottom: .2em;
+    margin-bottom:  .2em;
   }
   .contact-card span
   {
@@ -709,6 +717,14 @@ body{
   {
     top: 30%;
   }
+  .contact-card h3
+  {
+    position: relative;
+    bottom: -2em;
+    right: 2em;
+    display: block;
+    width: 100%;
+  }
   .toggle-btn
   {
     position: absolute;
@@ -716,4 +732,4 @@ body{
     left: 1em;
     z-index: 0;
   }
-}
+} 
